@@ -9,3 +9,12 @@ class StaticValues():
 
 class Specs():
     aktiv = False
+
+
+task1 = 'A'
+task2 = 'B'
+task3 = 'C'
+task4 = 'D'
+
+howManyCards = 5
+howManyReturns = 10

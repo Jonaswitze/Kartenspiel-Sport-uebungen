@@ -11,10 +11,12 @@ class Specs():
     aktiv = False
 
 
-task1 = 'A'
-task2 = 'B'
-task3 = 'C'
-task4 = 'D'
+task1 = 'A'     #JON
+task2 = 'B'     #JON
+task3 = 'C'     #JON
+task4 = 'D'     #JON
 
-howManyCards = 5
-howManyReturns = 10
+howManyCards = 5    #JON
+howManyReturns = 10 #JON
+
+joinNetxtTask = True #JON

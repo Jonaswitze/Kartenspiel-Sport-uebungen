@@ -1,5 +1,6 @@
 from settings import StaticValues, Specs
 from tkinter import messagebox
+from menuSettings import open
 
 
 def action_get_info_dialog():
@@ -12,5 +13,5 @@ def action_get_info_dialog():
 ************************************************"
     messagebox.showinfo(message=m_text, title="Infos")
 
-def action_settings():
-    print("test")
+def action_openSettings():
+    open()

@@ -27,7 +27,7 @@ def checkKeyDownEvents(event):
 
         #   Check any event on the keyboard related to the movement (KeyUp)
 
-def checkKeyUpEvents(event, character):
+def checkKeyUpEvents(event):
     if event.type == pygame.KEYUP:
         if event.key == pygame.K_LEFT:
             print('')

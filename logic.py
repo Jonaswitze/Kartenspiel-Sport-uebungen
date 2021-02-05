@@ -20,5 +20,4 @@ def logic():
         print('\n', tasks[randomTask])
         print(interval(), 'Widerholungen')
 
-
 logic()

@@ -1,23 +1,21 @@
-import pygame
+from tkinter import *
 from settings import StaticValues, Specs
 import functions
 
-def run_game():
-    pygame.init()
+screen = Tk()
+screen.title("Ich mache nun was.")
+screen.geometry(str(StaticValues.W) + "x" + str(StaticValues.H))
 
-    #   Properties of the screen are set
+menuleiste = Menu(screen)
+datei_menu = Menu(menuleiste, tearoff=0)
+help_menu = Menu(menuleiste, tearoff=0)
 
-    screen = pygame.display.set_mode((StaticValues.W, StaticValues.H))
-    pygame.display.set_caption("Sport")
+datei_menu.add_command(label="Settings", command=functions.action_settings)
+datei_menu.add_command(label="About", command=functions.action_get_info_dialog)
+datei_menu.add_separator()
+datei_menu.add_command(label="Exit", command=screen.quit)
 
-    clock = pygame.time.Clock()
+menuleiste.add_cascade(label="Datei", menu=datei_menu)
 
-    Specs.aktiv = True
-
-    #   Main loop
-    while Specs.aktiv:  # While game is running:
-        clock.tick(StaticValues.FPS)
-        functions.checkEvents()
-
-
-run_game()  # Main function is called
+screen.config(menu=menuleiste)
+screen.mainloop()

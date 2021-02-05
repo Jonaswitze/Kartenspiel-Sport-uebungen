@@ -2,38 +2,38 @@ import pygame
 from settings import StaticValues, Specs
 
 #   Check any event on keyboard
-def checkEvents(character):
+def checkEvents():
     for event in pygame.event.get():
         if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):       #   Quit viá Escape
             Specs.aktiv = False  #   Quit
             quit()
         elif event.type == pygame.KEYDOWN:
-            checkKeyDownEvents(event, character)
+            checkKeyDownEvents(event)
         elif event.type == pygame.KEYUP:
-            checkKeyUpEvents(event, character)
+            checkKeyUpEvents(event)
 
 #   Check any event on the keyboard related to the movement (KeyDown)
 
-def checkKeyDownEvents(event, character):
+def checkKeyDownEvents(event):
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_LEFT:
-            character.newDir = 3
+            print('')
         elif event.key == pygame.K_RIGHT:
-            character.newDir = 1
+            print('')
         elif event.key == pygame.K_DOWN:
-            character.newDir = 2
+            print('')
         elif event.key == pygame.K_UP:
-            character.newDir = 0
+            print('')
 
         #   Check any event on the keyboard related to the movement (KeyUp)
 
 def checkKeyUpEvents(event, character):
     if event.type == pygame.KEYUP:
         if event.key == pygame.K_LEFT:
-            character.movingLeft = False
+            print('')
         elif event.key == pygame.K_RIGHT:
-            character.movingRight = False
+            print('')
         elif event.key == pygame.K_DOWN:
-            character.movingDown = False
+            print('')
         elif event.key == pygame.K_UP:
-            character.movingUp = False
+            print('')

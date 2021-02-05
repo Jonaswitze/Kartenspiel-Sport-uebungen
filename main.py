@@ -1,5 +1,6 @@
 import pygame
-from settings import StaticValues
+from settings import StaticValues, Specs
+import functions
 
 def run_game():
     pygame.init()
@@ -11,9 +12,12 @@ def run_game():
 
     clock = pygame.time.Clock()
 
+    Specs.aktiv = True
+
     #   Main loop
-    while True:  # While game is running:
+    while Specs.aktiv:  # While game is running:
         clock.tick(StaticValues.FPS)
+        functions.checkEvents()
 
 
 run_game()  # Main function is called

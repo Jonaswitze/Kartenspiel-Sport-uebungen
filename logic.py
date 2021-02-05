@@ -1,5 +1,7 @@
 import random
 import settings as option
+import inOut
+import time
 
 def cards():
     return option.howManyCards
@@ -17,10 +19,10 @@ def logic():
 
     for i in range(cards()):
         randomTask = random.randint(0, len(tasks)-1)
-        print('\n', tasks[randomTask])
-        print(interval(), 'Widerholungen')
+        taskToDo = tasks[randomTask]
+        inOut.Task(taskToDo)
+        inOut.Interval(interval())
         if option.joinNetxtTask == True:
             continue
         else:
             break
-        option.joinNetxtTask = False

@@ -19,4 +19,4 @@ task4 = 'D'     #JON
 howManyCards = 5    #JON
 howManyReturns = 10 #JON
 
-joinNetxtTask = False #JON
+joinNetxtTask = True #JON

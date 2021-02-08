@@ -1,17 +1,29 @@
 from tkinter import *
 import configparser
 import functions
+from settings import Specs
+from os import path
 
 def openSettings():
     cfg = configparser.ConfigParser()
-    cfgf = open('settings.ini','w')
+    cfgr = configparser.ConfigParser()
+    cfgr.read('settings.cfg')
+    if path.exists("settings.cfg"):
+        try:
+            cfgr.get('Tasks', '1')
+            Specs.settingsnew = False
+        except:
+            Specs.settingsnew = True
+
+    else:
+        Specs.settingsnew = True
+
+
 
     def save():
-        try:
-            cfg.add_section('Tasks')
-            cfg.add_section('Other')
-        except:
-            print('already exists')
+        file = open('settings.cfg', 'w')
+        cfg.add_section('Tasks')
+        cfg.add_section('Other')
         cfg.set('Tasks', '1', entry_task1.get())
         cfg.set('Tasks', '2', entry_task2.get())
         cfg.set('Tasks', '3', entry_task3.get())
@@ -20,31 +32,36 @@ def openSettings():
         cards = str(entry_howManyCards.get())
         returns = str(entry_howManyReturns.get())
 
-        if cards is None or returns is None:
-            cfg.write(cfgf)
-            cfgf.close()
-            functions.error()
-        else:
-            try:
-                test1 = int(cards)
-                cfg.set('Other', 'howManyCards', entry_howManyCards.get())
-            except:
-                cfg.write(cfgf)
-                cfgf.close()
-                functions.error()
+        try:
+            test1 = int(cards)
+            cfg.set('Other', 'howManyCards', entry_howManyCards.get())
+        except:
             try:
                 test2 = int(returns)
                 cfg.set('Other', 'howManyReturns', entry_howManyReturns.get())
             except:
-                cfg.write(cfgf)
-                cfgf.close()
+                cfg.set('Other', 'howManyReturns', 'ERROR')
+                cfg.write(file)
+                file.close()
+                settings.destroy()
                 functions.error()
+            cfg.set('Other', 'howManyCards', 'ERROR')
+            cfg.write(file)
+            file.close()
+            settings.destroy()
+            functions.error()
+        try:
+            test2 = int(returns)
+            cfg.set('Other', 'howManyReturns', entry_howManyReturns.get())
+        except:
+            cfg.write(file)
+            file.close()
+            settings.destroy()
+            functions.error()
 
-        cfg.write(cfgf)
-        cfgf.close()
+        cfg.write(file)
+        file.close()
         settings.destroy()
-
-
 
     settings = Tk()
     settings.title("Settings")
@@ -90,5 +107,14 @@ def openSettings():
     entry_howManyCards.grid(row=5, column=1)
     entry_howManyReturns.grid(row=6, column=1)
     save.grid(row=8, column=1)
+
+    if not Specs.settingsnew:
+        entry_task1.insert(0, cfgr.get('Tasks', '1'))
+        entry_task2.insert(0, cfgr.get('Tasks', '2'))
+        entry_task3.insert(0, cfgr.get('Tasks', '3'))
+        entry_task4.insert(0, cfgr.get('Tasks', '4'))
+
+        entry_howManyReturns.insert(0, cfgr.get('Other', 'howManyReturns'))
+        entry_howManyCards.insert(0, cfgr.get('Other', 'howManyCards'))
 
     settings.mainloop()

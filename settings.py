@@ -9,6 +9,7 @@ class StaticValues():
 
 class Specs():
     aktiv = False
+    settingsnew = True
 
 
 task1 = 'A'     #JON

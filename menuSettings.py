@@ -4,6 +4,7 @@ import functions
 from settings import Specs
 from os import path
 
+
 def openSettings():
     cfg = configparser.ConfigParser()
     cfgr = configparser.ConfigParser()
@@ -17,8 +18,6 @@ def openSettings():
 
     else:
         Specs.settingsnew = True
-
-
 
     def save():
         file = open('settings.cfg', 'w')
@@ -79,7 +78,6 @@ def openSettings():
     howManyCards = Label(settings, text="Wie viele Runden:")
     howManyReturns = Label(settings, text="Maximale zulässige \n Wiederhoungen (am stück):")
 
-
     entry_task1 = Entry(settings, bd=5, width=40)
     entry_task2 = Entry(settings, bd=5, width=40)
     entry_task3 = Entry(settings, bd=5, width=40)
@@ -89,7 +87,6 @@ def openSettings():
     entry_howManyReturns = Entry(settings, bd=5, width=10)
 
     save = Button(settings, text="Speichern", width=20, command=save)
-
 
     task1.grid(row=0, column=0)
     task2.grid(row=1, column=0)

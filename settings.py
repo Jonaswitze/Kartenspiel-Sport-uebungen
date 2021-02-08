@@ -7,17 +7,18 @@ class StaticValues():
     GELB = (200, 180, 0)
     ALPHA = (0, 0, 0, 0)
 
+
 class Specs():
     aktiv = False
     settingsnew = True
 
 
-task1 = 'A'     #JON
-task2 = 'B'     #JON
-task3 = 'C'     #JON
-task4 = 'D'     #JON
+task1 = 'A'  # JON
+task2 = 'B'  # JON
+task3 = 'C'  # JON
+task4 = 'D'  # JON
 
-howManyCards = 5    #JON
-howManyReturns = 10 #JON
+howManyCards = 5  # JON
+howManyReturns = 10  # JON
 
-joinNetxtTask = True #JON
+joinNetxtTask = True  # JON

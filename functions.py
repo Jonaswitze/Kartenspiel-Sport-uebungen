@@ -1,6 +1,6 @@
 from settings import StaticValues, Specs
 from tkinter import messagebox
-from menuSettings import open
+from menuSettings import openSettings
 
 
 def action_get_info_dialog():
@@ -14,4 +14,9 @@ def action_get_info_dialog():
     messagebox.showinfo(message=m_text, title="Infos")
 
 def action_openSettings():
-    open()
+    openSettings()
+
+def error():
+    m_text = "Bitte Nur Zahlen, bei den Runden und \n Maximale zulässige Wiederhoungen"
+    messagebox.showinfo(message=m_text, title="ERROR")
+    action_openSettings()

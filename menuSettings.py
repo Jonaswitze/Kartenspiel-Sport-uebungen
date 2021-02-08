@@ -1,12 +1,49 @@
 from tkinter import *
-from settings import StaticValues, Specs
+import configparser
 import functions
 
+def openSettings():
+    cfg = configparser.ConfigParser()
+    cfgf = open('settings.ini','w')
 
-
-def open():
     def save():
-        print("save")
+        try:
+            cfg.add_section('Tasks')
+            cfg.add_section('Other')
+        except:
+            print('already exists')
+        cfg.set('Tasks', '1', entry_task1.get())
+        cfg.set('Tasks', '2', entry_task2.get())
+        cfg.set('Tasks', '3', entry_task3.get())
+        cfg.set('Tasks', '4', entry_task4.get())
+
+        cards = str(entry_howManyCards.get())
+        returns = str(entry_howManyReturns.get())
+
+        if cards is None or returns is None:
+            cfg.write(cfgf)
+            cfgf.close()
+            functions.error()
+        else:
+            try:
+                test1 = int(cards)
+                cfg.set('Other', 'howManyCards', entry_howManyCards.get())
+            except:
+                cfg.write(cfgf)
+                cfgf.close()
+                functions.error()
+            try:
+                test2 = int(returns)
+                cfg.set('Other', 'howManyReturns', entry_howManyReturns.get())
+            except:
+                cfg.write(cfgf)
+                cfgf.close()
+                functions.error()
+
+        cfg.write(cfgf)
+        cfgf.close()
+        settings.destroy()
+
 
 
     settings = Tk()
@@ -24,8 +61,6 @@ def open():
 
     howManyCards = Label(settings, text="Wie viele Runden:")
     howManyReturns = Label(settings, text="Maximale zulässige \n Wiederhoungen (am stück):")
-
-    error = Label(settings, text="Bitte Nur Zahlen bei den Runden und \n Maximale zulässige Wiederhoungen", fg='RED')
 
 
     entry_task1 = Entry(settings, bd=5, width=40)
@@ -47,7 +82,6 @@ def open():
     howManyCards.grid(row=5, column=0)
     howManyReturns.grid(row=6, column=0)
     space2.grid(row=7, column=0)
-    error.grid(row=8, column=0)
 
     entry_task1.grid(row=0, column=1)
     entry_task2.grid(row=1, column=1)

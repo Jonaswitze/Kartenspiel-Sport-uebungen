@@ -20,9 +20,5 @@ def logic():
     for i in range(cards()):
         randomTask = random.randint(0, len(tasks)-1)
         taskToDo = tasks[randomTask]
-        inOut.Task(taskToDo)
-        inOut.Interval(interval())
-        if option.joinNetxtTask == True:
-            continue
-        else:
-            break
+        return taskToDo
+

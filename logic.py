@@ -21,7 +21,6 @@ def logic():
     tasks.append(option.task3)
     tasks.append(option.task4)
 
-    for i in range(cards()):
-        randomTask = random.randint(0, len(tasks)-1)
-        taskToDo = tasks[randomTask]
-        return taskToDo
+    randomTask = random.randint(0, len(tasks)-1)
+    taskToDo = tasks[randomTask]
+    return taskToDo

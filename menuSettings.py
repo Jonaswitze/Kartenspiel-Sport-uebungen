@@ -86,7 +86,7 @@ def openSettings():
     entry_howManyCards = Entry(settings, bd=5, width=10)
     entry_howManyReturns = Entry(settings, bd=5, width=10)
 
-    save = Button(settings, text="Speichern", width=20, command=save)
+    save = Button(settings, text="Speichern", width=20, command=save, bg='#212121', fg='white', activebackground='#484848', activeforeground='White')
 
     task1.grid(row=0, column=0)
     task2.grid(row=1, column=0)

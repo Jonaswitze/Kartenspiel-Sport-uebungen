@@ -6,7 +6,7 @@ import configparser
 def cards():
     cfgr = configparser.ConfigParser()
     cfgr.read('settings.cfg')
-    return int(cfgr.get('Other', 'howManyReturns'))
+    return int(cfgr.get('Other', 'howManyCards'))
 
 def interval():
     cfgr = configparser.ConfigParser()

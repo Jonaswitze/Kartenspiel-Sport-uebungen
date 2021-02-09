@@ -1,12 +1,17 @@
 import random
 import settings as option
+import configparser
 
 
 def cards():
-    return option.howManyCards
+    cfgr = configparser.ConfigParser()
+    cfgr.read('settings.cfg')
+    return int(cfgr.get('Other', 'howManyReturns'))
 
 def interval():
-    m = random.randint(1, option.howManyReturns)
+    cfgr = configparser.ConfigParser()
+    cfgr.read('settings.cfg')
+    m = random.randint(1, int(cfgr.get('Other', 'howManyReturns')))
     return m
 
 def logic():

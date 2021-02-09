@@ -18,7 +18,4 @@ task2 = ''  # JON
 task3 = ''  # JON
 task4 = ''  # JON
 
-howManyCards = 5  # JON
-howManyReturns = 10  # JON
-
 joinNetxtTask = True  # JON

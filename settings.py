@@ -13,10 +13,10 @@ class Specs():
     settingsnew = True
 
 
-task1 = 'A'  # JON
-task2 = 'B'  # JON
-task3 = 'C'  # JON
-task4 = 'D'  # JON
+task1 = ''  # JON
+task2 = ''  # JON
+task3 = ''  # JON
+task4 = ''  # JON
 
 howManyCards = 5  # JON
 howManyReturns = 10  # JON

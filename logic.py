@@ -1,7 +1,6 @@
 import random
 import settings as option
-import inOut
-import time
+
 
 def cards():
     return option.howManyCards
@@ -21,4 +20,3 @@ def logic():
         randomTask = random.randint(0, len(tasks)-1)
         taskToDo = tasks[randomTask]
         return taskToDo
-

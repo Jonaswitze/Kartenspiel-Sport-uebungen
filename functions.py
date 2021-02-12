@@ -28,18 +28,14 @@ def error():
 
 def action_next():
     Specs.next = True
-    print(Specs.next)
 
 def run():
     while True:
-        print(logic.cards())
         for i in range(0, logic.cards()):
             while True:
                 if Specs.next:
                     Specs.next = False
-                    print('Weiter')
                     print(logic.logic())
                     break
-
-
+        break
 

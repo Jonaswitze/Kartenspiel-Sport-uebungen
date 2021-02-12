@@ -11,7 +11,7 @@ class StaticValues():
 class Specs():
     aktiv = False
     settingsnew = True
-    next = False
+    next = True
     start = False
 
 

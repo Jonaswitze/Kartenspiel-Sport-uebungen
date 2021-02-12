@@ -1,10 +1,12 @@
 from tkinter import *
 import tkinter.font as font
-
-
+from _thread import start_new_thread
 from settings import StaticValues, Specs
 import functions
-import logic
+
+def action_start():
+    start_new_thread(functions.run, ())
+    nextBT.pack(side=RIGHT)
 
 screen = Tk()
 screen.title("Ich mache nun was.")
@@ -26,14 +28,13 @@ screen.config(menu=menuleiste)
 fm = Frame(screen)
 
 myFont = font.Font(size=15)
-start = Button(fm, text='Start', command=functions.start, width=15, height=2, bg='#212121', fg='white', activebackground='#484848',
+startBT = Button(fm, text='Start', command=action_start, width=15, height=2, bg='#212121', fg='white', activebackground='#484848',
                activeforeground='White', font=myFont)
 
-next = Button(fm, text='Weiter', command=functions.start, width=15, height=2, bg='#212121', fg='white', activebackground='#484848',
+nextBT = Button(fm, text='Weiter', command=functions.action_next, width=15, height=2, bg='#212121', fg='white', activebackground='#484848',
               activeforeground='White', font=myFont)
 
-start.pack(side=RIGHT, padx=20, pady=20)
-next.pack(side=RIGHT)
+startBT.pack(side=RIGHT, padx=20, pady=20)
 
 fm.pack(side=BOTTOM, fill=X)
 

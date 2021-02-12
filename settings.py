@@ -20,4 +20,6 @@ task2 = 'B'  # JON
 task3 = 'C'  # JON
 task4 = 'D'  # JON
 
+currentTask = ''
+
 joinNetxtTask = True  # JON

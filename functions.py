@@ -1,4 +1,5 @@
 from settings import StaticValues, Specs
+import settings
 from tkinter import messagebox
 from menuSettings import openSettings
 import logic
@@ -31,15 +32,25 @@ def action_next():
     print(Specs.next)
 
 def run():
-    while True:
-        print(logic.cards())
-        for i in range(0, logic.cards()):
-            while True:
-                if Specs.next:
-                    Specs.next = False
-                    print('Weiter')
-                    print(logic.logic())
-                    break
+
+    print(logic.cards())
+    for i in range(0, logic.cards()):
+        while True:
+            if Specs.next:
+                Specs.next = False
+                if logic.logic() == 'A':
+                    settings.currentTask = 'A'
+                    #print(settings.currentTask)
+                elif logic.logic() == 'B':
+                    settings.currentTask = 'B'
+                    #print(settings.currentTask)
+                elif logic.logic() == 'C':
+                    settings.currentTask = 'C'
+                    #print(settings.currentTask)
+                elif logic.logic() == 'D':
+                    settings.currentTask = 'D'
+                    #print(settings.currentTask)
+                break
 
 
 

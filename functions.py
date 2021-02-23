@@ -11,7 +11,7 @@ def action_get_info_dialog():
                               Autoren: \n\
       Jonas-Matthias Witze & Joshua Rahmow\n\n\
                         Date: 05.02.2021\n\
-                           Version: 1.0.32\n\
+                           Version: 1.0.34\n\
 ************************************************"
     messagebox.showinfo(message=m_text, title="Infos")
 

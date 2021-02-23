@@ -61,7 +61,8 @@ def openSettings():
         cfg.write(file)
         file.close()
         settings.destroy()
-        exit(0)
+        functions.restart()
+        sys.exit()
 
     settings = Tk()
     settings.title("Settings")

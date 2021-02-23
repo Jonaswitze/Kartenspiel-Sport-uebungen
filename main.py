@@ -76,6 +76,7 @@ def run():
 
 
 screen = Tk()
+screen.iconbitmap('../laufen.ico')
 screen.title("Ich mache nun was.")
 screen.geometry(str(settings.StaticValues.W) + "x" + str(settings.StaticValues.H))
 
@@ -120,10 +121,13 @@ textFont = font.Font(size=20, weight="bold")
 cfgr = configparser.ConfigParser()
 cfgr.read('settings.cfg')
 
-label1 = Label(fm3, text=cfgr.get('Tasks', '1'), font=textFont)
-label2 = Label(fm3, text=cfgr.get('Tasks', '2'), font=textFont)
-label3 = Label(fm3, text=cfgr.get('Tasks', '3'), font=textFont)
-label4 = Label(fm3, text=cfgr.get('Tasks', '4'), font=textFont)
+try:
+    label1 = Label(fm3, text=cfgr.get('Tasks', '1'), font=textFont)
+    label2 = Label(fm3, text=cfgr.get('Tasks', '2'), font=textFont)
+    label3 = Label(fm3, text=cfgr.get('Tasks', '3'), font=textFont)
+    label4 = Label(fm3, text=cfgr.get('Tasks', '4'), font=textFont)
+except:
+    functions.emptySettings()
 
 
 fm2.pack(fill=BOTH, expand=True)

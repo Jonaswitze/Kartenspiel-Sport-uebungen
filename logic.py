@@ -21,7 +21,6 @@ def logic():
     random.seed()
     randomTask = random.randint(0, len(tasks)-1)
     taskToDo = tasks[randomTask]
-    print(str(taskToDo))
     if taskToDo == tasks[0]:
         option.task1 = True
         option.task2 = False

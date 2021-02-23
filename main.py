@@ -76,7 +76,7 @@ def run():
 
 
 screen = Tk()
-screen.iconbitmap('../laufen.ico')
+screen.iconbitmap(functions.resource_path0('laufen.ico'))
 screen.title("Ich mache nun was.")
 screen.geometry(str(settings.StaticValues.W) + "x" + str(settings.StaticValues.H))
 

@@ -65,6 +65,7 @@ def openSettings():
         sys.exit()
 
     settings = Tk()
+    settings.iconbitmap(functions.resource_path0('laufen.ico'))
     settings.title("Settings")
     settings.geometry("470x500")
     settings.resizable(width=0, height=0)

@@ -9,17 +9,13 @@ class StaticValues():
 
 
 class Specs():
-    aktiv = False
     settingsnew = True
-    next = True
+    next = False
     start = False
+    first = False
 
 
-task1 = 'A'  # JON
-task2 = 'B'  # JON
-task3 = 'C'  # JON
-task4 = 'D'  # JON
-
-currentTask = ''
-
-joinNetxtTask = True  # JON
+task1 = False
+task2 = False
+task3 = False
+task4 = False
